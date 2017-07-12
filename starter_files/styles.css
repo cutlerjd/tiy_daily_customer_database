@@ -13,6 +13,7 @@ h1{
   text-align: center;
   padding-top: 20px;
   text-transform: uppercase;
+
 }
 .main {
   display:flex;
@@ -25,7 +26,7 @@ h1{
 
 .customer {
   margin: auto;
-  width: 300px;
+  width: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,4 +52,12 @@ h1{
 
 .customer .ssn {
   margin: 20px auto;
+  color: transparent;
+   text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.customer .ssn:hover {
+  margin: 20px auto;
+  text-shadow: none;
+  color: black;
 }
