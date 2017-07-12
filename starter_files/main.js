@@ -7,7 +7,11 @@ wrapper.classList.add("wrapper")
 header.classList.add("header")
 main.classList.add("main")
 
+let headerH = document.createElement( "h1" )
+let headerText = document.createTextNode( "Internal Company Directory")
 
+headerH.appendChild(headerText)
+header.appendChild(headerH)
 
 let stringHTML = ""
 

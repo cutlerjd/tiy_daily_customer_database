@@ -1,9 +1,26 @@
+body {
+  background-color: black;
+  margin: 0px auto;
+}
+.wrapper {
+  margin: 0px auto;
+  width: 1200px;
+  display: block;
+  background-color: white
+}
+h1{
+  margin: 0px auto 40px;
+  text-align: center;
+  padding-top: 20px;
+  text-transform: uppercase;
+}
 .main {
   display:flex;
   flex-direction:row;
   flex-wrap: wrap;
   width: 1200px;
   box-sizing: border-box;
+  background-color: white
 }
 
 .customer {
@@ -12,8 +29,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  text-transform: capitalize;
 }
-.customer > * {
 
+.customer > img {
+  width: 250px;
+}
+
+.customer > h2 {
+  text-transform: uppercase;
+  border-bottom: 1px solid green;
+}
+
+.customer .email {
+  text-transform: uppercase;
+  color: gray;
+  font-weight: lighter;
+  font-size: .9em;
+  padding-bottom: 10px;
+}
+
+.customer .ssn {
+  margin: 20px auto;
 }
