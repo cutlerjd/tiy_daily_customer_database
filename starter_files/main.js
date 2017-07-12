@@ -1,0 +1,1 @@
+let arr_people = []
