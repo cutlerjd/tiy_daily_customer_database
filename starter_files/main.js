@@ -13,23 +13,7 @@ let headerText = document.createTextNode( "Internal Company Directory")
 headerH.appendChild(headerText)
 header.appendChild(headerH)
 
-let stringHTML = ""
-
-customers.results.forEach(function(item){
-  stringHTML += `
-  <div class="customer">
-    <img src="${item.picture.large}" alt="${item.name.first} ${item.name.last}" />
-    <h2 class="name">${item.name.first} ${item.name.last}</h2>
-    <div class="email">${item.email}</div>
-    <div class="addressLine1">${item.location.street}</div>
-    <div class="addressLine2">${item.location.city}, ${item.location.state} ${item.location.postcode}</div>
-    <div class="phone">${item.phone}</div>
-    <div class="ssn">${item.id.value}</div>
-  </div>
-  `
-})
-
-customers.results.forEach(function(item){
+customers.results.forEach(function(item, i, arr){
   //Set up customer div
   let customer_div = document.createElement( "div" )
   customer_div.classList.add("customer")
@@ -72,14 +56,31 @@ customers.results.forEach(function(item){
   let customer_ssn = document.createElement("div")
   let customer_ssn_text = document.createTextNode(item.id.value)
   customer_ssn.classList.add("ssn")
+  customer_ssn.setAttribute("data-index",i)
   customer_ssn.appendChild(customer_ssn_text)
   customer_div.appendChild(customer_ssn)
   //Append customer div to list
   main.appendChild(customer_div)
 })
 
-//main.innerHTML = stringHTML;
-
 htmlBody.appendChild(wrapper)
 wrapper.appendChild(header)
 wrapper.appendChild(main)
+
+
+//Build out using templates. Saving code
+// let stringHTML = ""
+// customers.results.forEach(function(item){
+//   stringHTML += `
+//   <div class="customer">
+//     <img src="${item.picture.large}" alt="${item.name.first} ${item.name.last}" />
+//     <h2 class="name">${item.name.first} ${item.name.last}</h2>
+//     <div class="email">${item.email}</div>
+//     <div class="addressLine1">${item.location.street}</div>
+//     <div class="addressLine2">${item.location.city}, ${item.location.state} ${item.location.postcode}</div>
+//     <div class="phone">${item.phone}</div>
+//     <div class="ssn">${item.id.value}</div>
+//   </div>
+//   `
+// })
+// main.innerHTML = stringHTML;
